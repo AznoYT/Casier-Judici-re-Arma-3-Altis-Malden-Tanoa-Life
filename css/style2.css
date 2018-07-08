@@ -1,0 +1,26 @@
+.titre {
+    position: relative;
+    left: 40%;
+    color: #FEFEFE;
+    font: normal normal bold 20px/50px Arial, Helvetica, sans-serif;
+}
+
+.tabtest {
+    border-width: 1px;
+    border-style: ridge;
+    border: 2px;
+    position: relative;
+    left: 10%;
+    width: 75%;
+}
+
+tr.entete {
+    height: 50px;
+    width: 50px;
+    background-color: #665b46;
+}
+
+tr.ligne_centre {
+    height: 30px;
+    background-color: #C5C6C6;
+}
