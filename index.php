@@ -25,9 +25,9 @@ include('php/bdd_access.php');
 				</form>
 			</aside>
             <div class="para">
-                <form method="GET" action="">
+                <form method="GET" action="php/action.php">
                     <input type="text" name="search" class="addform" palceholder="Entrer votre Nom"/>
-                    <input type="submit" value="Rechercher"/>
+                    <button type="submit" name="research" value="1">Rechercher</button>
                 </form>
                 <?php
                     if(isset($_SESSION['result'])){ ?>
@@ -63,6 +63,7 @@ include('php/bdd_access.php');
 			        </table>
                     <?php
                 }
+                unset($_SESSION["result"]);
                 ?>
             </div>
 		</section>
