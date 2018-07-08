@@ -17,8 +17,9 @@ html{
 }
 .titre{
 	position: relative;
-	left: 40%;
+	left: 30%;
 	color: #FEFEFE;
+    width: auto;
 	font: normal normal bold 20px/50px Arial, Helvetica, sans-serif;
 }
 .label{

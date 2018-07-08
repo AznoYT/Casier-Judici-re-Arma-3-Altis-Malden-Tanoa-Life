@@ -9,11 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 	</head>
 	<body class="body">
-		<header class="titre">
-			<a title="Page d'Accueil">
-				<h1>Kavalife RP Casier Judiciaire</h1>
-			</a>
-		</header>
+		<?php include('header.php');?>
 		<section>
 			<?php
 				$username = $_POST['utilisateur'];

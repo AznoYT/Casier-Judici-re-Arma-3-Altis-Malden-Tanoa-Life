@@ -13,9 +13,7 @@
 		<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	</head>
 	<body class="overflowx">
-		<header class="titre">
-			<h1>Kavalife RP Casier Judiciaire</h1>
-		</header>
+		<?php include('header.php');?>
 		<?php include('nav-bar.php');?>
 		<section class="row">
 		<div class="para">
@@ -56,22 +54,13 @@
 		</fieldset>
 		</div>
 		<div class="para">
-		<form method="POST" action="dbadd.php">
+		<form method="GET" action="action.php">
 			<fieldset>
-			<legend>Information de la personne:</legend>
-				<input type="text" name="prenom" placeholder="Prénom" class="addform" required /></br></br>
-				<input type="text" name="nom" placeholder="Nom" class="addform" required /></br></br>
-				<label class="label">Date et Heure de l'Arestation (IRL):</label></br>
-				<input type="datetime-local" name="date" class="addform" max="2999-12-31" required /></br></br>
-				<label class="label">Délits:</label></br>
-				<textarea name="delits" rows="10" cols="30" class="addform" placeholder="Merci de préciser le plus possible" required></textarea></br>
-				<label class="label">Rechercher sur Interpol:</label></br>
-				<select name="interpol" class="addform" required>
-					<option value="oui">Oui</option>
-					<option value="non">Non</option>
-				</select></br></br>
-				<input type="text" name="amende" placeholder="Montant de l'Amende" class="addform" required /></br></br>
-				<input class="submit" type="submit" value="Ajouter"/>
+			<legend>Modifier le mot de passe Admin:</legend>
+				<input type="text" name="amdp" placeholder="Ancien mot de passe" class="addform" required /></br></br>
+				<input type="text" name="mdp1" placeholder="Mot de passe" class="addform" required /></br></br>
+				<input type="text" name="mdp2" placeholder="Confirmation du Mot de passe" class="addform" required /></br></br>
+				<button class="submit" type="submit" name="modif" value="1">Modifier</button>
 			</fieldset>
 			</form>
 		</div>

@@ -2,7 +2,7 @@
 include('./php/bdd_access.php');
 $user = $_SESSION['user'];
 if ($_SESSION['user'] == NULL) {
-    header('location: index.html');
+    header('location: index.php');
 } else {
 ?>
 <!DOCTYPE html>
@@ -14,9 +14,7 @@ if ($_SESSION['user'] == NULL) {
 		<link rel="icon" type="image/png" href="./pic/favicon.png" />
 	</head>
 	<body class="overflowx">
-		<header class="titre">
-			<h1>Kavalife RP Casier Judiciaire</h1>
-		</header>
+		<?php include('php/header.php');?>
 		<section style="text-decoration:none">
 			<input type="button" class="submit" onclick="location.href='php/add.php'" value="Ajouter des Personnes"/>
 			<input type="button" class="submit" onclick="location.href='php/consult.php'" value="Consulter les Personnes"/>

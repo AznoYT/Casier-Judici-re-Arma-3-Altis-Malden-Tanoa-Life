@@ -11,10 +11,8 @@
 		<link rel="icon" type="image/png" href="../pic/favicon.png" />
 		<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	</head>
-	<body class="body">
-		<header class="titre">
-			<h1>Kavalife RP Casier Judiciaire</h1>
-		</header>
+	<body class="overflowx">
+		<?php include('header.php');?>
 		<?php include('nav-bar.php');?>
 		<section>
 			<form method="POST" action="dbadd.php">

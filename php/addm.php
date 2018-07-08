@@ -11,11 +11,7 @@ include('./bdd_access.php');
 		<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	</head>
 	<body class="overflowx">
-		<header class="titre">
-			<a title="Page d'Accueil">
-				<h1>Kavalife RP Casier Judiciaire</h1>
-			</a>
-		</header>
+		<?php include('header.php');?>
 		<?php include('nav-bar.php');?>
 		<section>
 			<aside class="right">

@@ -11,11 +11,7 @@ include('php/bdd_access.php');
 		<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	</head>
 	<body class="overflowx">
-		<header class="titre">
-			<a title="Page d'Accueil">
-				<h1>Kavalife RP Casier Judiciaire</h1>
-			</a>
-		</header>
+		<?php include('php/header.php');?>
 		<section>
 			<aside class="para">
 				<form method="POST" action="php/connect.php">
@@ -26,7 +22,10 @@ include('php/bdd_access.php');
 			</aside>
             <div class="para">
                 <form method="GET" action="php/action.php">
-                    <input type="text" name="search" class="addform" palceholder="Entrer votre Nom"/>
+                    <label>Entrer votre Nom RP :</label>
+                    <input type="text" name="search" class="addform" palceholder="Entrer votre Nom RP" required/></br></br>
+                    <label>Entrer votre Prenom RP :</label>
+                    <input type="text" name="searchp" class="addform" palceholder="Entrer votre Prenom RP" required/></br></br>
                     <button type="submit" name="research" value="1">Rechercher</button>
                 </form>
                 <?php
@@ -43,7 +42,7 @@ include('php/bdd_access.php');
 				        </thead>
 				        <tbody>
 				        <?php
-					        $reponse = $bdd->query('SELECT * FROM casier WHERE nom="'.$_SESSION['nomr'].'"');
+					        $reponse = $bdd->query('SELECT * FROM casier WHERE nom="'.$_SESSION['nomr'].'" AND prenom="'.$_SESSION['prenomr'].'"');
 					        while ($donnees = $reponse->fetch())
 					        {
 					        ?>
@@ -58,6 +57,7 @@ include('php/bdd_access.php');
 					        }
 					        $reponse->closeCursor(); // Termine le traitement de la requête
                             unset ($_SESSION['nomr']);
+                            unset ($_SESSION['prenomr']);
 				        ?>
 				        </tbody>
 			        </table>
@@ -67,8 +67,5 @@ include('php/bdd_access.php');
                 ?>
             </div>
 		</section>
-		<footer>
-			<h4>Auteur: Azno - Juillet 2018</h4>
-		</footer>
 	</body>
 </html>

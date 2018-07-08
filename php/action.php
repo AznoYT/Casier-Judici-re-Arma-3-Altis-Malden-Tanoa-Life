@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include 'bdd_access.php';
+	include 'bdd_access.php';
 ?>
 <html>
 	<head>
@@ -11,12 +11,7 @@ include 'bdd_access.php';
 		<link rel="icon" type="image/png" href="./pic/favicon.png" />
 		<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	</head>
-	<body class="body">
-		<header class="titre">
-			<a title="Page d'Accueil">
-				<h1>Kavalife RP Casier Judiciaire</h1>
-			</a>
-		</header>
+	<body class="overflowx">
 		<section>
 			<?php
 				if($_GET['delete'] == 1)
@@ -62,8 +57,29 @@ include 'bdd_access.php';
 				if($_GET['research'] == 1)
 				{
 					$_SESSION['nomr'] = $_GET['search'];
+					$_SESSION['prenomr'] = $_GET['searchp'];
 					$_SESSION['result'] = 'ok';
 					header('location: ../index.php');
+				}
+
+				if($_GET['modif'] == 1)
+				{
+					$user = $_SESSION['user'];
+					$amdp = $_GET['amdp'];
+					$mdp1 = $_GET['mpd1'];
+					$mdp2 = $_GET['mpd2'];
+					$reponse = $bdd->query('SELECT * FROM user WHERE utilisateur="'.$user.'"');
+					while ($donnees = $reponse->fetch())
+					{
+						if ($amdp == $donnees['mdp']) {
+							if ($mdp1 == $mdp2){
+								$mdp = $_GET['mdp1'];
+								$stmt = $bdd->prepare('UPDATE user SET mdp = "'.$mdp.'" WHERE utilisateur="'.$user.'"');
+								$stmt->execute();
+							}
+						}
+					}
+					header('location: parametre.php');
 				}
 			?>
 		</section>

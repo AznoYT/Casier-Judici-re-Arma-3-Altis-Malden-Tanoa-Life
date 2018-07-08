@@ -41,7 +41,7 @@
 			if($usr["addp"] == 1) 
 			{
 			?>
-				<a href="parametre.php">Paramettre</a>
+				<a href="parametre.php">Paramètre</a>
 			<?php
 			}
 		}

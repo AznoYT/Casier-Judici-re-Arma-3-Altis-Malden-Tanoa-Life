@@ -7,13 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 	</head>
 	<body class="body">
-		<header>
-		<header class="titre">
-			<a title="Page d'Accueil">
-				<h1>Kavalife RP Casier Judiciaire</h1>
-			</a>
-		</header>
-		</header>
+		<?php include('header.php');?>
 		<section>
 			<?php
 				$login = $bdd->query('SELECT * FROM user');
@@ -28,6 +22,8 @@
 						{
 							$_SESSION['user'] = $_POST['utilisateur'];
 							$_SESSION['grade'] = $usr['grade'];
+							$_SESSION['ajout'] = $usr['addp'];
+							$_SESSION['remove'] = $usr['removei'];
 							header('location: ../client.php');
 						}else{
 							echo('> Mot de passe incorect.');

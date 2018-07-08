@@ -11,9 +11,7 @@
 		<link rel="icon" type="image/png" href="../pic/favicon.png" />
 	</head>
 	<body class="overflowx">
-		<header class="titre">
-			<h1>Kavalife RP Casier Judiciaire</h1>
-		</header>
+		<?php include('header.php');?>
 		<?php include('nav-bar.php');?>
 		<section>
 			<table cellpadding="0" cellspacing="0" border="0" class="tabtest">
@@ -42,13 +40,18 @@
 							<th><?=$donnees[5]?></th>
 							<th><?=$donnees[6]?></th>
 							<th><?=$donnees[7]?></th>
+							<?php
+							if ($_SESSION['remove'] == 1) {?>
 							<th><form method="GET" action="action.php">
                             <?php
-                            $id = $donnees['id'];
-                            echo "<input type=\"hidden\" name=\"id\" value=\"$id\"/>"
-                            ?>
-                            <button type="submit" name="delete" value="1">Supprimer</button>
-                            </form></th>
+								$id = $donnees['id'];
+								echo "<input type=\"hidden\" name=\"id\" value=\"$id\"/>"
+								?>
+								<button type="submit" name="delete" value="1">Supprimer</button>
+								</form></th>
+							<?php
+							}
+							?>
 						</tr>
 					<?php
 					}
