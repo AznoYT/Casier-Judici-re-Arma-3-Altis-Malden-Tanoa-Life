@@ -7,6 +7,7 @@ include 'bdd_access.php';
 		<meta charset="UTF-8">
 		<title>Kavalife RP Casier Judiciaire</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style2.css" />
 		<link rel="icon" type="image/png" href="./pic/favicon.png" />
 		<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	</head>
@@ -56,6 +57,13 @@ include 'bdd_access.php';
 					$stmt = $bdd->prepare('DELETE FROM gradegend WHERE grade="'.$_GET['id'].'"');
 					$stmt->execute();
 					header('location: parametre.php');
+				}
+				
+				if($_GET['research'] == 1)
+				{
+					$_SESSION['nomr'] = $_GET['search'];
+					$_SESSION['result'] = 'ok';
+					header('location: ../index.php');
 				}
 			?>
 		</section>
